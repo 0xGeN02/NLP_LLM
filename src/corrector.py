@@ -12,14 +12,3 @@ def obtener_corrector():
     except Exception as e:
         st.error(f"Error inicializando la herramienta de corrección: {e}")
         return None
-
-def corregir_texto(texto, herramienta):
-    """
-    Corrige el texto utilizando LanguageTool.
-    """
-    try:
-        matches = herramienta.check(texto)
-        return language_tool_python.correct(texto, matches)
-    except Exception as e:
-        st.error(f"Error durante la corrección: {e}")
-        return texto
